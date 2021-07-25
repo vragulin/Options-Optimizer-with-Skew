@@ -96,6 +96,13 @@ def skewnorm_params(mean, std, skew):
         
     return location, scale, shape
 
+    #############################################
+    # Here is another approach to generating skewed distributions, based on 
+    #     mixing 2 normal variables.
+    #     https://ralfgerlich.biz/2020/03/09/generating-skewed-normally-distributed-random-values/
+    #     L. Ermak and J. S. Nasstrom, A method for generating skewed random numbers using two overlapping uniform distributions 1995.
+    #############################################
+    
 ''' Testing Skew Normal Calculations '''
 #Set seeds
 if __name__ == "__main__":
@@ -109,11 +116,11 @@ if __name__ == "__main__":
         print(moments)
     
     # '''EXAMPLE - testing that my function is producing correct skews'''
-    desired_mean = 0.06
-    desired_skew = -1.2
+    desired_mean = 0.0272
+    desired_skew = -1.29
     desired_sd = 0.16
     
-    final_dist = createSkewDist(mean=desired_mean, sd=desired_sd, skew=desired_skew, size=1000000)
+    final_dist = createSkewDist(mean=desired_mean, sd=desired_sd, skew=desired_skew, size=100000)
     
     # inspect the plots & moments, try random sample
     fig, ax = plt.subplots(figsize=(12,7))
