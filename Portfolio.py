@@ -96,14 +96,14 @@ class Portfolio:
 if __name__ == '__main__':
     
     #Specify stock return parameters"
-    ret_mean = 0.0272
+    ret_mean = 0.0672
     ret_std  = 0.16
     #ret_skews = [ 0, -0.25, -0.5, -1.25, -2.0 ]
     ret_skews = [ -1.3 ]
-    risk_aversion_list = [0.5, 1, 2, 3, 5, 10]
+    risk_aversion_list = [1, 2, 3]
     prem2ev_list = [ 0 ] # <- match BS price, 0.2, 0.5, 1.0, 2.0]
     opt_strike = 90
-    use_options_list = ['Stock', 'Opts'] # ['Stock', 'Opts', 'Opts+K']
+    use_options_list = ['Stock', 'Opts' ] # ['Stock', 'Opts', 'Opts+K']
         
     for use_options in use_options_list:
         

@@ -49,14 +49,15 @@ def createSkewDist(mean, sd, skew, size):
         # adjust the distribution mean to the specified value
         final_dist = new_dist + (mean - np.mean(new_dist))
     
-    elif skew != 0:
+    #elif skew != 0:
+    else:
         # Use skewnormal distribution
         location, scale, shape = skewnorm_params(mean, sd, skew)
         final_dist = stats.skewnorm.rvs(shape,loc=location, scale = scale, size=10000)
     
-    else:
-        # if skew = 0, just use the normal distribution 
-        final_dist = np.random.normal(mean, sd, size)
+    # else:
+    #     # if skew = 0, just use the normal distribution 
+    #     final_dist = np.random.normal(mean, sd, size)
         
     return final_dist
 
